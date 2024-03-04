@@ -1,0 +1,472 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Mulish", sans-serif;
+}
+.hero-section {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    background-image: linear-gradient(60deg, #131e29 5%, #003f58 80%);
+}
+.logo-container {
+    text-align: center;
+    background-color: #003f58;
+    padding: 20px;
+}
+
+.logo {
+    max-width: 150px; /* Adjust based on your logo's size */
+    height: auto;
+}
+.hero-section {
+    position: relative; /* This makes sure that the absolutely positioned blobs are relative to this container */
+    display: flex;
+    height: 100vh;
+    background-image: linear-gradient(60deg, #131e29 5%, #003f58 80%);
+    border-radius: 16px;
+    max-height: 800px;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.left-part, .right-part {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.left-part img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+.left-part h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.span-scroll {
+    color: #ccc;
+}
+.left-part p {
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid #00ce7c;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+.btn {
+    display: block;
+    width: calc(100% + 20px);
+    padding: 10px;
+    margin: 10px -10px;
+    background-image: linear-gradient(to right, #00ce7c, #ffffff);
+    border: none;
+    border-radius: 5px;
+    color: #131e29;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Add to your existing CSS */
+.highlight {
+    background-image: linear-gradient(115deg, #ffb71b, #fed925);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Adjust the button gradient here if needed */
+.btn {
+    background-image: linear-gradient(to right, #00ce7c, #ffffff);
+    /* Other styles remain unchanged */
+}
+
+.scroll-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    gap: 8px; /* Adjust the space between the Lottie animation and the text */
+}
+
+.blob, .other-blob {
+    position: absolute;
+    width: auto; /* Adjust width as needed, or use max-width for responsiveness */
+    height: auto; /* Adjust height as needed */
+}
+
+.blob {
+    top: -60px; /* Adjust as needed */
+    right: -30px; /* Adjust as needed */
+    max-width: 300px;
+    height: auto;
+}
+
+.other-blob {
+    bottom: -5%; /* Adjust as needed */
+    right: 30%; /* Adjust as needed */
+    max-width: 250px;
+    height: auto;
+    rotate: 90deg;
+}
+
+.image-two {
+    max-width: 400px;
+}
+
+.text-container p {
+    color: #323e48;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 1.44;
+}
+
+.second-hero {
+    position: relative; /* Ensures that the child elements can be positioned absolutely relative to this container */
+    max-height: 600px;
+    padding: 10px 30px;
+    background: #F8F8F8;
+}
+
+.centered-title {
+    position: absolute;
+    left: 50%;
+    margin-top: 40px;
+    transform: translate(-50%, -50%);
+    width: auto;
+    font-size: 24px;
+    color: #002a3a;
+    /* Ensure the container is relative for the pseudo-element positioning */
+    display: inline-block; /* Change display to manage width and position of the pseudo-element correctly */
+}
+
+.centered-title::after {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 1px;
+    background-image: linear-gradient(to right, #00ce7c, #00a0b2); /* Adjusted gradient to match the button style */
+    margin-top: 8px; /* Space between the text and the line */
+    margin-left: 50%; /* Center the line relative to the text */
+    transform: translateX(-50%); /* Adjust positioning to truly center it */
+}
+
+
+/* Position blobs behind the text and other content */
+.blob, .other-blob {
+    position: absolute;
+    z-index: 0; 
+}
+
+/* Ensure content is above the blobs */
+.left-part, .right-part {
+    position: relative;
+    z-index: 1; 
+}
+
+.left-part .text-container span {
+    font-weight: 800;
+}
+
+/* Info Section Test */
+.info-section {
+    background-image: linear-gradient(60deg, #131e29 5%, #003f58 80%);
+    margin: 20px;
+    padding: 20px 40px;
+    border-radius: 16px;
+    color: #fff; /* Assuming white text color for visibility */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center aligns the content */
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%; /* Ensure the row takes full width of its container */
+    margin-bottom: 20px; /* Space between rows */
+    margin-top: 50px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center; /* Align items to start to handle different text lengths */
+    background-color: transparent; /* Optional: removes the background color */
+    border-radius: 8px; /* Optional: if you want each item to have a rounded border */
+    padding: 10px;
+    flex: 1; /* Ensures each info-item takes equal space */
+    margin: 0 10px; /* Adds a little space between items */
+}
+
+.info-item img {
+    width: 150px; /* Adjusts the icon size */
+    height: 150px; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.info-icon {
+    margin-right: 20px; /* Space between icon and text */
+    width: 100px; /* Icons are twice as big */
+    height: 100px; /* Maintain aspect ratio */
+}
+
+.info-text {
+    max-width: calc(100% - 120px); /* Adjusts text container width considering icon width and margin */
+}
+
+.info-text h4 {
+    font-style: italic;
+    font-weight: 300; /* Makes the text light and italic */
+    margin-bottom: 0px; /* Adds a little space below h3 */
+}
+
+.info-text h4 {
+    margin-bottom: 0px; /* Adds a little space below h4 */
+}
+
+.info-text p {
+    /* Ensures paragraphs have the same width for alignment */
+    text-align: justify; /* Optional: justifies the text for better alignment */
+    font-weight: 200;
+}
+
+.info-heading::after {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 1px;
+    background-image: linear-gradient(to right, #00ce7c, #00a0b2); /* Adjusted gradient to match the button style */
+    margin-top: 8px; /* Space between the text and the line */
+    margin-left: 50%; /* Center the line relative to the text */
+    transform: translateX(-50%); /* Adjust positioning to truly center it */
+}
+
+.info-text > h3, .info-text > dotlottie-player {
+    display: inline-block;
+    vertical-align: middle;
+} 
+
+
+
+
+/* Ensure each info-item has a controlled maximum width */
+.info-item {
+    flex: 1; /* Allows the item to grow to fill the space */
+    max-width: 500px; /* Prevents the item from stretching too much */
+    margin: 0 10px; /* Maintains spacing between items */
+    display: flex;
+    align-items: center; /* Aligns items at the start to handle different text lengths */
+    padding: 10px;
+}
+
+/* Adjust icon size */
+.info-icon {
+    margin-right: 20px; /* Increases space between icon and text */
+    width: 100px; /* Makes icon twice as big */
+    height: 100px; /* Adjusts height to maintain aspect ratio */
+}
+
+/* Adjusting spacing between h3 and h4 */
+.info-text h3 {
+    margin: 0;
+    margin-bottom: 5px; 
+    font-weight: 500; /* Light and italic styling for h3 */
+}
+
+.info-text h4 {
+    margin: 0;
+    margin-bottom: 10px; /* Adjust bottom margin for spacing before paragraph */
+}
+
+/* Paragraph styling to ensure alignment */
+.info-text p {
+    text-align: justify; /* Justifies the text for better alignment */
+    max-width: 100%; /* Ensures paragraph uses the available width */
+}
+
+.info-p {
+    margin: 0;
+    margin-bottom: 10px; /* Adjust bottom margin for spacing before paragraph */
+    text-align: justify;
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.info-heading-bottom {
+    margin-top: 50px; /* Space between the rows */
+    margin-bottom: 20px; /* Space between the rows */
+}
+
+/* Cards */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 60px;
+    gap: 20px; /* Adjust the gap between cards as needed */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right, aqua, #00ce7c);
+    color: white;
+    width: calc(50% - 10px); /* Adjust width as needed, accounting for gap */
+    height: 250px; /* Adjust height as needed */
+    border-radius: 8px; /* Optional: Rounds the corners of the card */
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Ensures padding does not affect the overall dimensions of the card */
+    text-align: center; /* Centers the text horizontally */
+}
+
+.card h2, .card p {
+    margin: 10px 0; /* Adjusts the margin for spacing around the h2 and p elements */
+}
+
+.card h2 {
+    font-size: 32px; /* Adjusts the font size of the h2 element */
+}
+
+.card p {
+    font-size: 16px; /* Adjusts the font size of the h2 element */
+    font-weight: 200;
+}
+
+
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column; 
+        padding: 10px; 
+        max-height: 1000px;
+    }
+
+    .left-part h1 {
+        font-size: 24px; 
+        margin-top: 20px; 
+    }
+
+    .right-part {
+        margin-top: -50px; 
+    }
+
+    .left-part p, .span-scroll {
+        font-size: 14px; 
+    }
+
+    .btn {
+        font-size: 16px; 
+        padding: 12px 20px; 
+    }
+
+    .form-container {
+        width: 100%; 
+        max-width: 100%; 
+        padding: 15px; 
+        box-sizing: border-box; 
+    }
+
+    .form-container input[type="text"], .form-container .btn {
+        width: 100%; 
+        margin: 8px 0; 
+        box-sizing: border-box; 
+    }
+
+    /* SECOND HERO */
+    .centered-title {
+        font-size: 20px; 
+    }
+
+    .text-container p {
+        font-size: 14px; 
+        padding: 0 20px; 
+        text-align: center;
+        margin-top: -100px;
+    }
+
+    .image-container img {
+        max-width: 80%; 
+        margin: 20px 0; 
+    }
+
+    .second-hero .right-part {
+        padding: 10px; 
+        margin-top: -300px;
+    }
+
+    .second-hero {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
+    
+    .centered-title {
+        text-align: center; 
+        margin-bottom: 20px; 
+    }
+
+    /* INFO SECTION */
+    .info-row {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .info-section h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+    .cards-container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .info-row {
+        margin-top: 5px; 
+    }
+
+    .info-item img {
+        width: 100px; 
+        height: 100px; 
+    }
+
+    .info-text p {
+        font-size: 12px;
+    }
+
+    .info-text h3 {
+        font-size: 18px;
+    }
+
+    .card {
+        width: 100%; 
+        margin-bottom: 0px; 
+    }
+
+    .card p {
+        font-size: 12px; 
+    }
+}
+
+
